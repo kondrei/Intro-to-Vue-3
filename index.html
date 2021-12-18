@@ -6,7 +6,7 @@
     <!-- Import Styles -->
     <link rel="stylesheet" href="./assets/styles.css" />
     <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   <body>
     <div id="app">
@@ -26,8 +26,9 @@
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
-            <button class="button">Add to Cart</button>
+            <div  @mouseover="changeColor(variant.image)" v-for="variant in variants" :key="variant.id" >{{ variant.color }}</div>
+            <button class="button" @click="addToChart">Add to Cart</button>
+            <button class="button" @click="removeFromChart">Remove from Cart</button>
           </div>
         </div>
       </div>
